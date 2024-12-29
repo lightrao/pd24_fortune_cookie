@@ -39,7 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final fortune = Provider.of<FortuneModel>(context);
+    final fortuneModel = Provider.of<FortuneModel>(context);
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -56,13 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  fortune.currentFortune,
+                  fortuneModel.currentFortune,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
             ),
             ElevatedButton(
-                onPressed: () => fortune.getNewFortune(),
+                onPressed: () => fortuneModel.getNewFortune(),
                 child: const Text('Get Fortune'))
           ],
         ),
